@@ -1,0 +1,58 @@
+
+<div class="row">
+    <div class="col-sm-6">
+        <p class="lead"> Cadastrar Propriedade </p>
+        <form id="form">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="tamanho">Tamanho</label>
+                <input id="tamanho" name="tamanho" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <input id="cidade_id" name="cidade_id" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="usuario_id">Proprietario</label>
+                <input id="usuario_id" name="usuario_id" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input id="endereco" name="endereco" class="form-control">
+            </div>
+            <input type="submit" class="btn btn-lg btn-block btn-primary" value="Enviar">
+        </form>
+    </div>
+</div>
+<script>
+
+document.getElementById("form").addEventListener("submit",function(e){
+    e.preventDefault();
+    jQuery.support.cors = true;
+    //adicionar();
+
+    if(navigator.onLine){
+        $.ajax({
+            type: "post",
+            url: 'http://'+ip+'/epagri3/propriedades/add.json',
+            data: {nome: $("input[name='nome']").val(),tamanho: $("input[name='tamanho']").val(),usuario_id: $("input[name='usuario_id']").val(),cidade_id: $("input[name='cidade_id']").val(),endereco:$("input[name='endereco']").val()},
+            dataType: "json",
+            crossDomain: true,
+            success: function(data){
+                console.log(data);
+                toastr.success("Adicionado com sucesso");
+                loadPage2('welcome.html');
+            },
+            error: function(e){
+                console.error("ERRO:"+JSON.stringify(e));
+                toastr.error("Ocorreu um erro ao adicionar");
+            }
+        });
+    } else {
+        adicionar();
+    }
+});
+</script>

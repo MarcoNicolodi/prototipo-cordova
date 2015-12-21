@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <!--    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="jasny-bootstrap/css/jasny-bootstrap.min.css"  media="screen">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/nomoretables.css">
+        <link rel="stylesheet" type="text/css" href="bower_components/toastr/toastr.css">
+        <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+        <title>Hello World</title>
+    </head>
+    <body>
+        <!-- <div class="navbar-top">
+            <a onClick="loadPage('index.html')">Epagri</a>
+            <div id="connectionAdvisor" class="pull-right">
+                <div id="connectionAdvice"></div>
+            </div>
+        </div>
+-->
+        <div>
+            <div id="deviceready" class="blink">
+                <div class="navmenu navmenu-default navmenu-fixed-left offcanvas">
+                    <a class="navmenu-brand" href="#">Menu</a>
+                    <ul class="nav navmenu-nav">
+                        <li><a href="#" onClick="loadPage2('form.html')">Cadastrar</a></li>
+                        <li><a href="#" onClick="loadPage2('listar.html')">Listar</a></li>
+                        <li><a href="#" onClick="loadPage2('config.html')">Configurações</a></li>
+
+                    </ul>
+                </div>
+                <div class="navbar navbar-default navbar-fixed-top">
+                    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- <div style="padding-top: 5px; padding-bottom: 0px;">
+                        <div class="circle" id="connectionAdvisor"></div>
+                    </div> -->
+                    <a id="connectionAdvisor" class="navmenu-brand pull-right" href="#" style="padding-top: 5px; padding-bottom: 0px;">Prototipo</a>
+                </div>
+                <div class="container">
+                    <div id="app">
+                        <div class="page-header">
+                            <h1>Protótipo de Web App com PhoneGap/Cordova</h1>
+                        </div>
+                        <p class="lead">Este é um exemplo de web app que atua em funcionamento com um webservice em PHP/MySQL.</p>
+                        <p>Entre as tecnologias utilizadas estão Apache Cordova, HTML5, CSS3, JS, Bootstrap 3, e no lado do servidor PHP, MySQL e CakePHP3.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+        <script type="text/javascript" src="bower_components/toastr/toastr.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+    </body>
+</html>

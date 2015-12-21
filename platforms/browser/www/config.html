@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-sm-12">
+        <form id="configForm">
+            <div class="form-group">
+                <label for="ip"> IP </label>
+                <input id="ip" type="text" class="form-control">
+            </div>
+            <input type="submit" class="btn btn-primary btn-lg btn-block">
+        </form>
+    </div>
+</div>
+<script>
+
+
+
+document.getElementById("configForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    setIp();
+    toastr.success("IP configurado");
+});
+
+if(ip){
+    $("#ip").attr("placeholder", ip);
+}
+</script>
